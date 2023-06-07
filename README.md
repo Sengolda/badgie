@@ -27,6 +27,8 @@ py -3 -m pip install -Ur requirements.txt
 py -3 main.py
 ```
 - The rest is done interactively
-- After you are finished setting it up interactively please go the server and use the `hello` slash command.
+- After you are finished setting it up interactively please go the server and use the `hello` slash command. 
+
+**NOTE:** The slash command may take around 5-10 minutes to register
 
 Please give a star if this project helped you
