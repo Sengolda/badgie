@@ -13,6 +13,19 @@ if not sys.version_info[:2] >= (3, 8):
     )
     sys.exit(1)
 
+
+print(
+    """
+
+██████╗░░█████╗░██████╗░░██████╗░██╗███████╗
+██╔══██╗██╔══██╗██╔══██╗██╔════╝░██║██╔════╝
+██████╦╝███████║██║░░██║██║░░██╗░██║█████╗░░
+██╔══██╗██╔══██║██║░░██║██║░░╚██╗██║██╔══╝░░
+██████╦╝██║░░██║██████╔╝╚██████╔╝██║███████╗
+╚═════╝░╚═╝░░╚═╝╚═════╝░░╚═════╝░╚═╝╚══════╝
+"""
+)
+
 config = {}
 try:
     with open("./config.json") as f:
@@ -32,14 +45,15 @@ guild_id = config.get("guild_id")
 
 if guild_id is None:
     guild_id = input(
-    "Input the id of the guild you will be using (this is not required but putting the id would be faster):  "
+        "Input the id of the guild you will be using (this is not required but putting the id would be faster):  "
     )
-    guild_id = int(guild_id) if guild_id  else 0
+    guild_id = int(guild_id) if guild_id else 0
     config["guild_id"] = guild_id
     to_sync_guild = discord.Object(id=guild_id)
 
 with open("./config.json", "w") as f:
     json.dump(config, f, indent=4)
+
 
 class BadgieBadgeGiver(discord.Client):
     def __init__(self):
@@ -47,7 +61,10 @@ class BadgieBadgeGiver(discord.Client):
         self.tree = app_commands.CommandTree(self)
 
     async def on_ready(self):
-        print("Badgie Giver is ready!\n\n Use this to invite the bot:  ", oauth_url(self.user.id, permissions=discord.Permissions.all()))
+        print(
+            "Badgie Giver is ready!\n\n Use this to invite the bot:  ",
+            oauth_url(self.user.id, permissions=discord.Permissions.all()),
+        )
 
     def run(self):
         super().run(token)
