@@ -26,6 +26,7 @@ cd badgie
 py -3 -m pip install -Ur requirements.txt
 py -3 main.py
 ```
-The rest is done interactively
+- The rest is done interactively
+- After you are finished setting it up interactively please go the server and use the `hello` slash command.
 
 Please give a star if this project helped you
