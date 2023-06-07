@@ -86,6 +86,7 @@ async def hello(interaction: discord.Interaction):
         f"Hi, {interaction.user.mention},",
         "please visit https://discord.com/developers/active-developer to get your badge, if you don't see it just wait 24 hours and you will see it.",
         "if you still do not get it even after that time period please open an issue at: ",
+        "https://github.com/sengolda/badgie/issues/"
     )
 
     await interaction.response.send_message("\n".join(msg))
